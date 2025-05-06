@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CSV‑Telefonbuch‑Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Anime.js für die Pfad‑Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+</head>
+<body>
+  <!-- Login-Bereich -->
+  <div id="login-screen" class="page">
+    <div class="container">
+      <div class="left">
+        <div class="login">🔒 Anmeldung</div>
+        <div class="eula">
+          Bitte melde dich mit deinen Zugangsdaten an.
+        </div>
+      </div>
+      <div class="right">
+        <svg viewBox="0 0 320 300">
+          <defs>
+            <linearGradient id="linearGradient" x1="13" y1="193.5" x2="307" y2="193.5" gradientUnits="userSpaceOnUse">
+              <stop style="stop-color:#ff00ff;" offset="0" />
+              <stop style="stop-color:#ff0000;" offset="1" />
+            </linearGradient>
+          </defs>
+          <path d="m 40,120 240,0 c0,0 25,0.8 25,35 0.008,34.2 -25,35 -25,35 h-240 c0,-0.02 -25,4 -25,38.5 0,34.5 25,38.5 25,38.5 h215 c0,0 20,-1 20,-25 0,-24 -20,-25 -20,-25 h-190 c0,0 -20,1.7 -20,25 0,24 20,25 20,25 h169" />
+        </svg>
+        <div class="form">
+          <label for="user">Benutzername</label>
+          <input type="text" id="user" />
+          <label for="pwd">Passwort</label>
+          <input type="password" id="pwd" />
+          <input type="button" id="login-btn" value="Anmelden" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Haupt‑App -->
+  <div id="app-screen" class="page" style="display:none;">
+    <header>
+      <img src="logo-without-bg.png" alt="Logo" width="150" />
+      <h1>📞 Telefonbuch‑Generator</h1>
+      <button id="reset-btn">🔄 Alles zurücksetzen</button>
+    </header>
+    <section class="hint">
+      💡 Hinweis: Vorname, Nachname und Telefonnummer dürfen keine Leerzeichen enthalten.
+      Verwende stattdessen Bindestriche (-) oder Unterstriche (_).
+    </section>
+    <section>
+      <table id="tel-table">
+        <thead>
+          <tr><th>Vorname</th><th>Nachname</th><th>Telefonnummer</th><th>Aktion</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button id="add-row">+ Zeile hinzufügen</button>
+    </section>
+    <section>
+      <button id="generate-csv">📥 CSV erstellen und herunterladen</button>
+      <a id="download-link" style="display:none;">Download CSV</a>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
